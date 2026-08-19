@@ -1,26 +1,26 @@
-# 1. Aşama: Build (Derleme) Aşaması - Node 20 LTS
+# 1. Aşama: Build Aşaması (Node 20 Alpine)
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Bağımlılıkları kopyala ve yükle
-COPY package.json package-lock.json* ./
-RUN npm ci || npm install
+# Paket tanımlarını kopyala ve sessiz/hızlı yükle
+COPY package*.json ./
+RUN npm install --no-audit --no-fund
 
-# Kaynak kodları kopyala ve build al
+# Kaynak kodları kopyala ve derle
 COPY . .
 RUN npm run build
 
-# 2. Aşama: Nginx ile Ultra Hızlı Sunum
+# 2. Aşama: Nginx ile Web Sunumu
 FROM nginx:alpine
 
-# Özel Nginx konfigürasyonunu kopyala
+# Nginx ayar dosyasını ekle
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Derlenen statik dosyaları Nginx web kök dizinine kopyala
+# Derleme çıktısını web dizinine aktar
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Hem 80 hem 3000 portunu dışa aç (Coolify hangisini isterse anında eşleşir)
+# Hem port 80 hem port 3000'i aç
 EXPOSE 80 3000
 
 CMD ["nginx", "-g", "daemon off;"]
