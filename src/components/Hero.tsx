@@ -119,6 +119,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onOpenAppointment }) => 
                   <img
                     src="/assets/foto_x/foto_1.jpg"
                     alt="Osman Özden Bio Enerji Bioenerji ve Işık Beden"
+                    width="600"
+                    height="900"
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-full object-cover object-center filter brightness-100 contrast-105 hover:scale-105 transition-transform duration-700"
                     loading="eager"
                   />
