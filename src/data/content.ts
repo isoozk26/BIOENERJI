@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   whatsappNumber: "905423274622",
   instagram: "@osmanozden_bioenerji",
   instagramUrl: "https://instagram.com",
-  location: "İstanbul & Online Seanslar",
+  location: "Ankara & Online Seanslar",
   freeFirstSessionText: "İlk Ön Görüşme Yüz Yüze / Online Olarak Yapılır ve ÜCRETSİZDİR.",
 };
 

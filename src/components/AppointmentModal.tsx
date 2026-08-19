@@ -133,14 +133,14 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                 </button>
                 <button
                   type="button"
-                  onClick={() => setSessionType('Yüz Yüze (İstanbul)')}
+                  onClick={() => setSessionType('Yüz Yüze (Ankara)')}
                   className={`py-2.5 px-3 rounded-xl text-xs font-medium border transition-all ${
                     sessionType.includes('Yüz Yüze')
                       ? 'bg-purple-600/30 border-purple-400 text-purple-200'
                       : 'bg-slate-900 border-slate-800 text-slate-400'
                   }`}
                 >
-                  📍 Yüz Yüze (İstanbul)
+                  📍 Yüz Yüze (Ankara)
                 </button>
               </div>
             </div>
