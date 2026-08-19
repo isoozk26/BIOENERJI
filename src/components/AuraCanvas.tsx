@@ -21,28 +21,28 @@ export const AuraCanvas: React.FC = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Glowing Cosmic Aura Orbs
+    // Softer, luminous, breathing ambient light orbs (Pastel Lavender, Sky Blue, Soft Champagne)
     const orbs = [
-      { x: width * 0.2, y: height * 0.25, radius: 340, color: 'rgba(168, 85, 247, 0.09)', vx: 0.25, vy: 0.18 },
-      { x: width * 0.8, y: height * 0.35, radius: 380, color: 'rgba(6, 182, 212, 0.07)', vx: -0.18, vy: 0.24 },
-      { x: width * 0.45, y: height * 0.7, radius: 420, color: 'rgba(245, 158, 11, 0.06)', vx: 0.14, vy: -0.2 },
-      { x: width * 0.15, y: height * 0.8, radius: 300, color: 'rgba(124, 58, 237, 0.07)', vx: 0.2, vy: -0.15 },
+      { x: width * 0.25, y: height * 0.2, radius: 460, color: 'rgba(192, 132, 252, 0.12)', vx: 0.2, vy: 0.14 },
+      { x: width * 0.75, y: height * 0.3, radius: 480, color: 'rgba(56, 189, 248, 0.10)', vx: -0.15, vy: 0.18 },
+      { x: width * 0.5, y: height * 0.65, radius: 520, color: 'rgba(253, 230, 138, 0.08)', vx: 0.12, vy: -0.16 },
+      { x: width * 0.2, y: height * 0.8, radius: 420, color: 'rgba(168, 85, 247, 0.10)', vx: 0.16, vy: -0.12 },
     ];
 
-    // Cosmic stardust particles
-    const particles = Array.from({ length: 50 }, () => ({
+    // Delicate stardust
+    const particles = Array.from({ length: 45 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 2 + 0.8,
-      speedX: (Math.random() - 0.5) * 0.35,
-      speedY: (Math.random() - 0.5) * 0.35,
-      opacity: Math.random() * 0.5 + 0.2
+      size: Math.random() * 2 + 0.6,
+      speedX: (Math.random() - 0.5) * 0.28,
+      speedY: (Math.random() - 0.5) * 0.28,
+      opacity: Math.random() * 0.45 + 0.25
     }));
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Render glowing energy orbs
+      // Render soft glowing light spheres
       orbs.forEach((orb) => {
         orb.x += orb.vx;
         orb.y += orb.vy;
@@ -52,7 +52,7 @@ export const AuraCanvas: React.FC = () => {
 
         const gradient = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.radius);
         gradient.addColorStop(0, orb.color);
-        gradient.addColorStop(1, 'rgba(7, 8, 13, 0)');
+        gradient.addColorStop(1, 'rgba(13, 17, 29, 0)');
 
         ctx.fillStyle = gradient;
         ctx.beginPath();
@@ -60,7 +60,7 @@ export const AuraCanvas: React.FC = () => {
         ctx.fill();
       });
 
-      // Render subtle cosmic stardust
+      // Render soft stardust
       particles.forEach((p) => {
         p.x += p.speedX;
         p.y += p.speedY;
@@ -70,7 +70,7 @@ export const AuraCanvas: React.FC = () => {
         if (p.y < 0) p.y = height;
         if (p.y > height) p.y = 0;
 
-        ctx.fillStyle = `rgba(226, 232, 240, ${p.opacity})`;
+        ctx.fillStyle = `rgba(241, 245, 249, ${p.opacity})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -91,7 +91,7 @@ export const AuraCanvas: React.FC = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.95 }}
+      style={{ opacity: 1 }}
     />
   );
 };

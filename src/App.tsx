@@ -31,11 +31,11 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#07080D] text-slate-100 overflow-x-hidden font-sans selection:bg-purple-500/30 selection:text-purple-200">
-      {/* Background Interactive Cosmic Aura Waves */}
+    <div className="relative min-h-screen bg-[#0D111D] text-slate-100 overflow-x-hidden font-sans selection:bg-purple-500/30 selection:text-purple-200">
+      {/* Soft Luminous Cosmic Atmosphere */}
       <AuraCanvas />
 
-      {/* Top Fixed Navigation */}
+      {/* Top Navigation */}
       <Navbar
         onOpenQuiz={handleOpenQuiz}
         onOpenAppointment={handleOpenAppointment}
@@ -49,32 +49,32 @@ export const App: React.FC = () => {
           onOpenAppointment={() => handleOpenAppointment()}
         />
 
-        {/* 3 Core Issues & Energy Blockages */}
+        {/* 3 Core Issues */}
         <ThreeCoreIssues
           onOpenAppointment={handleOpenAppointment}
           onOpenQuiz={handleOpenQuiz}
         />
 
-        {/* Holistic Philosophy & Light Body */}
+        {/* Holistic Philosophy */}
         <HolisticPhilosophy />
 
-        {/* Healing Sessions & Services */}
+        {/* Healing Sessions */}
         <ServicesSection
           onOpenAppointment={handleOpenAppointment}
         />
 
-        {/* About Osman Özden & Acceptance Rules */}
+        {/* About Healer */}
         <AboutHealer
           onOpenAppointment={() => handleOpenAppointment()}
         />
 
-        {/* Media & Spiritual Image Gallery (17 Standard FOTO_X + Video) */}
+        {/* Media Gallery (17 Standard FOTO_X + Video) */}
         <MediaGallery />
 
-        {/* FAQ Accordion */}
+        {/* FAQ */}
         <FaqSection />
 
-        {/* Transparent Legal Disclaimer */}
+        {/* Legal Disclaimer */}
         <LegalNotice />
       </main>
 

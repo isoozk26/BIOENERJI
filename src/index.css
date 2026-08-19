@@ -9,9 +9,11 @@
   }
 
   body {
-    background-color: #07080D;
-    color: #F1F5F9;
+    background: radial-gradient(circle at 50% 0%, #171E30 0%, #0D111D 60%, #090D17 100%);
+    background-color: #0D111D;
+    color: #F8FAFC;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   h1, h2, h3, .font-serif {
@@ -21,16 +23,16 @@
 }
 
 /* =========================================================
-   LUMORA AURA & COSMIC GLOW (ULTRA-PREMIUM THEME)
-   Derin Gece Obsidyeni, Kozmik Mor, Siyan, Altın Işıma
+   LUMORA AURA & LUMINOUS SANCTUARY (FERAH & HAFİF RENK PALETİ)
+   Kadife Gece Mavisi, İpeksi Leylak, Buz Mavisi, Şampanya Altını
    ========================================================= */
 
 .glass-panel {
-  background: rgba(15, 18, 28, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(168, 85, 247, 0.18);
-  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.6);
+  background: rgba(22, 29, 47, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  box-shadow: 0 12px 32px -8px rgba(10, 15, 30, 0.4);
 }
 
 .glass-panel-hover {
@@ -38,20 +40,20 @@
 }
 
 .glass-panel-hover:hover {
-  background: rgba(23, 27, 42, 0.9);
-  border-color: rgba(168, 85, 247, 0.45);
+  background: rgba(30, 40, 65, 0.75);
+  border-color: rgba(216, 180, 254, 0.45);
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px -10px rgba(168, 85, 247, 0.25);
+  box-shadow: 0 20px 40px -10px rgba(147, 51, 234, 0.2);
 }
 
 .cosmic-gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 45%, #C084FC 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #E0E7FF 40%, #D8B4FE 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+  background: linear-gradient(135deg, #FFFBEB 0%, #FDE68A 50%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -59,24 +61,24 @@
 .aura-glow-circle {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(120px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Custom Cosmic Scrollbar */
+/* Custom Soft Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #07080D;
+  background: #0D111D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #2D3748;
   border-radius: 4px;
-  border: 2px solid #07080D;
+  border: 2px solid #0D111D;
 }
 
 ::-webkit-scrollbar-thumb:hover {

@@ -13,30 +13,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
   };
 
   return (
-    <footer className="relative bg-[#05060A] text-slate-400 pt-16 pb-24 md:pb-16 border-t border-slate-900">
+    <footer className="relative bg-[#090C16] text-slate-400 pt-16 pb-24 md:pb-16 border-t border-purple-500/15">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-900">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
           
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-600 to-amber-400 p-[1px]">
-                <div className="w-full h-full bg-[#07080D] rounded-full flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-purple-400" />
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-500 to-amber-300 p-[1px]">
+                <div className="w-full h-full bg-[#0D111D] rounded-full flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-purple-300" />
                 </div>
               </div>
               <div>
                 <span className="font-serif font-bold text-lg text-white tracking-wider">
                   {SITE_CONFIG.name}
                 </span>
-                <span className="block text-[11px] text-slate-500 font-light">
+                <span className="block text-[11px] text-slate-400 font-light">
                   {SITE_CONFIG.practitioner}
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm font-light">
+            <p className="text-xs text-slate-300 leading-relaxed max-w-sm font-light">
               {SITE_CONFIG.tagline}
             </p>
 
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
                 href={SITE_CONFIG.instagramUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-pink-400 hover:border-pink-500/40 transition-colors"
+                className="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-pink-400 hover:border-pink-500/40 transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
                 href={`https://wa.me/${SITE_CONFIG.whatsappNumber}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
+                className="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
                 <span>{SITE_CONFIG.location}</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300">
-                <Phone className="w-3.5 h-3.5 text-cyan-400" />
+                <Phone className="w-3.5 h-3.5 text-sky-400" />
                 <span>{SITE_CONFIG.phone}</span>
               </div>
             </div>
@@ -100,14 +100,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
             <div className="pt-2 flex flex-col gap-2">
               <button
                 onClick={onOpenAppointment}
-                className="w-full py-2.5 px-4 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 border border-purple-500/40 text-purple-200 text-xs font-medium transition-all text-center"
+                className="w-full py-2.5 px-4 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 border border-purple-400/40 text-purple-200 text-xs font-medium transition-all text-center"
               >
                 Ücretsiz İlk Ön Görüşme Al
               </button>
 
               <button
                 onClick={onOpenQuiz}
-                className="w-full py-2.5 px-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-medium transition-all text-center"
+                className="w-full py-2.5 px-4 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 hover:text-white text-xs font-medium transition-all text-center"
               >
                 Enerji Blokaj Testini Başlat
               </button>
@@ -117,12 +117,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
         </div>
 
         {/* Bottom copyright & Scroll To Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© 2026 LUMORA - Osman Özden. Tüm hakları saklıdır.</p>
           
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-slate-400 hover:text-purple-300 transition-colors"
+            className="flex items-center gap-1.5 text-slate-300 hover:text-purple-300 transition-colors"
           >
             <span>Yukarı Çık</span>
             <ArrowUp className="w-3.5 h-3.5" />

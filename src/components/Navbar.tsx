@@ -39,22 +39,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#07080D]/90 backdrop-blur-xl border-b border-purple-900/20 py-3 shadow-2xl shadow-purple-950/20'
+          ? 'bg-[#0D111D]/90 backdrop-blur-2xl border-b border-purple-500/20 py-3.5 shadow-2xl shadow-purple-950/20'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 rounded-full p-[1.5px] shadow-lg bg-gradient-to-tr from-purple-600 via-indigo-500 to-amber-400 shadow-purple-500/20 transition-transform duration-300 group-hover:scale-105">
-            <div className="w-full h-full rounded-full flex items-center justify-center bg-[#07080D]">
-              <Sparkles className="w-5 h-5 text-purple-400 group-hover:rotate-12 transition-transform duration-300" />
+          <div className="relative w-10 h-10 rounded-full p-[1.5px] shadow-lg bg-gradient-to-tr from-purple-500 via-sky-400 to-amber-300 shadow-purple-500/20 transition-transform duration-300 group-hover:scale-105">
+            <div className="w-full h-full rounded-full flex items-center justify-center bg-[#0D111D]">
+              <Sparkles className="w-5 h-5 text-purple-300 group-hover:rotate-12 transition-transform duration-300" />
             </div>
           </div>
           <div>
             <span className="font-serif font-bold text-xl tracking-wider text-white flex items-center gap-1.5">
               {SITE_CONFIG.name}
-              <span className="text-[10px] uppercase font-sans font-medium px-2 py-0.5 rounded border bg-purple-500/20 text-purple-300 border-purple-500/30">
+              <span className="text-[10px] uppercase font-sans font-medium px-2 py-0.5 rounded border bg-purple-500/20 text-purple-200 border-purple-400/30">
                 Aura
               </span>
             </span>
@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-purple-300 transition-colors duration-200"
+              className="text-sm font-medium text-slate-200 hover:text-purple-300 transition-colors duration-200"
             >
               {link.name}
             </a>
@@ -86,19 +86,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
             className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all duration-300 ${
               isPlayingSound
                 ? 'bg-purple-500/20 border-purple-400 text-purple-200 shadow-md shadow-purple-500/30 animate-pulse'
-                : 'bg-slate-900/60 border-slate-700/60 text-slate-400 hover:text-slate-200 hover:border-slate-600'
+                : 'bg-slate-800/60 border-slate-700/60 text-slate-300 hover:text-white hover:border-slate-500'
             }`}
           >
-            {isPlayingSound ? <Volume2 className="w-3.5 h-3.5 text-purple-400" /> : <VolumeX className="w-3.5 h-3.5" />}
+            {isPlayingSound ? <Volume2 className="w-3.5 h-3.5 text-purple-300" /> : <VolumeX className="w-3.5 h-3.5" />}
             <span>432 Hz {isPlayingSound ? 'Açık' : 'Frekans'}</span>
           </button>
 
           {/* Mini Quiz CTA */}
           <button
             onClick={onOpenQuiz}
-            className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-cyan-950/50 border border-cyan-500/40 text-cyan-300 hover:bg-cyan-900/60 transition-all duration-200 flex items-center gap-1.5"
+            className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-sky-950/40 border border-sky-400/30 text-sky-200 hover:bg-sky-900/60 transition-all duration-200 flex items-center gap-1.5"
           >
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-3.5 h-3.5 text-sky-300" />
             <span>Enerji Testi</span>
           </button>
 
@@ -107,9 +107,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
             onClick={() => onOpenAppointment()}
             className="relative group overflow-hidden rounded-full p-[1px] font-medium text-xs focus:outline-none"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-amber-500 rounded-full group-hover:scale-105 transition-transform duration-300"></span>
-            <span className="relative flex items-center gap-2 px-4 py-2 bg-[#0F121C] rounded-full text-white group-hover:bg-opacity-90 transition-all duration-300">
-              <Calendar className="w-3.5 h-3.5 text-purple-400" />
+            <span className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-amber-400 rounded-full group-hover:scale-105 transition-transform duration-300"></span>
+            <span className="relative flex items-center gap-2 px-4 py-2 bg-[#141A2C] rounded-full text-white group-hover:bg-opacity-90 transition-all duration-300">
+              <Calendar className="w-3.5 h-3.5 text-purple-300" />
               <span>Ücretsiz Ön Görüşme</span>
             </span>
           </button>
@@ -120,16 +120,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
           <button
             onClick={toggleSound}
             className={`p-2 rounded-full border text-xs ${
-              isPlayingSound ? 'bg-purple-500/20 border-purple-400 text-purple-300' : 'bg-slate-900 border-slate-800 text-slate-400'
+              isPlayingSound ? 'bg-purple-500/20 border-purple-400 text-purple-300' : 'bg-slate-800 border-slate-700 text-slate-300'
             }`}
             aria-label="Frekans Sesi"
           >
-            {isPlayingSound ? <Volume2 className="w-4 h-4 text-purple-400" /> : <VolumeX className="w-4 h-4" />}
+            {isPlayingSound ? <Volume2 className="w-4 h-4 text-purple-300" /> : <VolumeX className="w-4 h-4" />}
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-200 hover:text-white"
+            className="p-2 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200 hover:text-white"
             aria-label="Menüyü Aç"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -139,14 +139,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0A0D17]/95 border-b border-purple-900/30 px-6 py-6 backdrop-blur-2xl transition-all">
+        <div className="md:hidden bg-[#0D111D]/98 border-b border-purple-900/40 px-6 py-6 backdrop-blur-2xl transition-all">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-medium text-slate-200 hover:text-purple-300 py-1 border-b border-slate-800/40"
+                className="text-base font-medium text-slate-100 hover:text-purple-300 py-1 border-b border-slate-800"
               >
                 {link.name}
               </a>
@@ -158,9 +158,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
                   setMobileMenuOpen(false);
                   onOpenQuiz();
                 }}
-                className="w-full py-2.5 px-4 rounded-xl bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-sm font-medium flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-xl bg-sky-950/60 border border-sky-400/40 text-sky-200 text-sm font-medium flex items-center justify-center gap-2"
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 text-sky-300" />
                 <span>Enerji Blokaj Testi Yap</span>
               </button>
 
