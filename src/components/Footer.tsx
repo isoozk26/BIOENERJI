@@ -93,7 +93,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
               </div>
               <div className="flex items-center gap-2 text-slate-300">
                 <Phone className="w-3.5 h-3.5 text-sky-400" />
-                <span>{SITE_CONFIG.phone}</span>
+                <a href={`tel:${SITE_CONFIG.phone.replace(/\s+/g, '')}`} className="hover:text-purple-300 transition-colors">
+                  {SITE_CONFIG.phone}
+                </a>
               </div>
             </div>
 
