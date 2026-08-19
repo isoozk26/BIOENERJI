@@ -25,7 +25,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onOpenAppointment }) => 
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-purple-900/40 border border-purple-400/30 text-purple-200 text-xs font-semibold backdrop-blur-xl shadow-lg shadow-purple-950/20">
               <span className="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
-              <span className="tracking-wider uppercase">LUMORA HOLİSTİK OLUMLAMA & BİOENERJİ</span>
+              <span className="tracking-wider uppercase">BİOENERJİ & HOLİSTİK OLUMLAMA</span>
             </div>
 
             {/* Main Headline */}

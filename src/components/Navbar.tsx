@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
-        {/* Brand Logo */}
+        {/* Brand Logo - Sol Üst Köşe */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 rounded-full p-[1.5px] shadow-lg bg-gradient-to-tr from-purple-500 via-sky-400 to-amber-300 shadow-purple-500/20 transition-transform duration-300 group-hover:scale-105">
             <div className="w-full h-full rounded-full flex items-center justify-center bg-[#0D111D]">
@@ -53,10 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
           </div>
           <div>
             <span className="font-serif font-bold text-xl tracking-wider text-white flex items-center gap-1.5">
-              {SITE_CONFIG.name}
-              <span className="text-[10px] uppercase font-sans font-medium px-2 py-0.5 rounded border bg-purple-500/20 text-purple-200 border-purple-400/30">
-                Aura
-              </span>
+              Bio Enerji
             </span>
             <span className="block text-[11px] text-slate-400 tracking-wider font-light">
               {SITE_CONFIG.practitioner}
