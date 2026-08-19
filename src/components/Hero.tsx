@@ -118,7 +118,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onOpenAppointment }) => 
                 <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-900">
                   <img
                     src="/assets/foto_x/foto_1.jpg"
-                    alt="Osman Özden Lumora Bioenerji ve Işık Beden"
+                    alt="Osman Özden Bio Enerji Bioenerji ve Işık Beden"
                     className="w-full h-full object-cover object-center filter brightness-100 contrast-105 hover:scale-105 transition-transform duration-700"
                     loading="eager"
                   />

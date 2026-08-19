@@ -1,7 +1,7 @@
 import { IssueItem, ServiceItem, MediaItem, QuizQuestion } from '../types';
 
 export const SITE_CONFIG = {
-  name: "LUMORA",
+  name: "Bio Enerji",
   practitioner: "Osman Özden",
   title: "Holistik Olumlama & Bioenerji Uygulayıcısı",
   tagline: "Enerjinin Aktığı Yerde Şifa Büyür. İçindeki Işık Bedeni ve Şifacıyı Uyandır.",

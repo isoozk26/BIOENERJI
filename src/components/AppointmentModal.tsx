@@ -21,7 +21,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = `🌟 Yeni Ön Görüşme Talebi (LUMORA Web)
+    const text = `🌟 Yeni Ön Görüşme Talebi (Bio Enerji Web)
 • İsim: ${name}
 • Telefon: ${phone}
 • Tercih Edilen Seans: ${topic}

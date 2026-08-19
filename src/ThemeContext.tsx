@@ -11,7 +11,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Varsayılan ve kalıcı aktif tema: Tema 1 (Lumora Aura & Cosmic Glow)
+  // Varsayılan ve kalıcı aktif tema: Tema 1 (Bio Enerji Aura & Cosmic Glow)
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     return 'cosmic';
   });

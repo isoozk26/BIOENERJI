@@ -118,7 +118,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
 
         {/* Bottom copyright & Scroll To Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© 2026 LUMORA - Osman Özden. Tüm hakları saklıdır.</p>
+          <p>© 2026 Bio Enerji - Osman Özden. Tüm hakları saklıdır.</p>
           
           <button
             onClick={scrollToTop}
