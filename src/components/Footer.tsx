@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
               </div>
               <div>
                 <span className="font-serif font-bold text-lg text-white tracking-wider">
-                  {SITE_CONFIG.name}
+                  Bio Enerji
                 </span>
                 <span className="block text-[11px] text-slate-400 font-light">
                   {SITE_CONFIG.practitioner}

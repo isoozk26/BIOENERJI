@@ -11,14 +11,13 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Varsayılan ve kalıcı aktif tema: Tema 1 (Bio Enerji Aura & Cosmic Glow)
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     return 'cosmic';
   });
 
   const setTheme = (mode: ThemeMode) => {
     setThemeState(mode);
-    localStorage.setItem('lumora_theme', mode);
+    localStorage.setItem('bioenerji_theme', mode);
   };
 
   const toggleTheme = () => {
@@ -27,12 +26,11 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     const root = document.documentElement;
-    // Set to Tema 1 Cosmic
     root.classList.remove('theme-zen');
     root.classList.add('theme-cosmic');
-    document.body.style.backgroundColor = '#07080D';
-    document.body.style.color = '#F1F5F9';
-    localStorage.setItem('lumora_theme', 'cosmic');
+    document.body.style.backgroundColor = '#0D111D';
+    document.body.style.color = '#F8FAFC';
+    localStorage.setItem('bioenerji_theme', 'cosmic');
   }, [theme]);
 
   return (
