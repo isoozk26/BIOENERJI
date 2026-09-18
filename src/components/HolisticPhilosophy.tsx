@@ -61,11 +61,15 @@ export const HolisticPhilosophy: React.FC = () => {
                   onClick={() => setActiveTab(pillar.id)}
                   className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 flex items-center gap-4 ${
                     isSelected
-                      ? 'bg-purple-900/40 border-purple-400/90 shadow-xl shadow-purple-950/40 ring-1 ring-purple-400/40 border-l-4 border-l-purple-400'
-                      : 'bg-[#151C2E]/60 border-slate-700/50 text-slate-300 hover:bg-[#1B243B] hover:border-purple-400/40'
+                      ? 'bg-purple-900/40 border-purple-400 shadow-xl shadow-purple-950/40'
+                      : 'bg-[#151C2E]/60 border-slate-700/60 text-slate-300 hover:bg-[#1B243B] hover:border-purple-400/40'
                   }`}
                 >
-                  <div className={`p-3 rounded-xl border flex-shrink-0 ${isSelected ? 'bg-purple-800/50 border-purple-300 text-purple-200' : 'bg-slate-800 border-slate-700 text-slate-400'}`}>
+                  <div className={`w-12 h-12 rounded-xl border flex items-center justify-center flex-shrink-0 ${
+                    isSelected
+                      ? 'bg-purple-800/50 border-purple-300 text-purple-200'
+                      : 'bg-slate-800 border-slate-700 text-slate-400'
+                  }`}>
                     {getPillarIcon(pillar.id)}
                   </div>
                   <div className="flex-1 min-w-0">
