@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
   instagram: "@hayatbensendendahaguzelim",
   instagramUrl: "https://www.instagram.com/hayatbensendendahaguzelim/",
   location: "Ankara & Online Seanslar",
-  freeFirstSessionText: "İlk Ön Görüşme Yüz Yüze / Online Olarak Yapılır ve ÜCRETSİZDİR.",
+  freeFirstSessionText: "İlk ön görüşme hem yüz yüze hem de online olarak tamamen ÜCRETSİZDİR. WhatsApp üzerinden yapılmaktadır ve gerçek kişi bilgileriniz gerekmektedir.",
 };
 
 export const THREE_CORE_ISSUES: IssueItem[] = [
@@ -101,8 +101,8 @@ export const SERVICES: ServiceItem[] = [
     summary: "Geçmişten gelen duygusal travmaların, döngülerin ve sınırlayıcı inançların sevgi ve yüksek frekansla dönüştürülmesi.",
     details: [
       "Bilinçdışı negatif inanç kalıplarının tespiti",
-      "Kişiye özel rezonans ve olumlama haritası",
-      "Ruhsal ve zihinsel sakinleşme protokolü"
+      "Geçmişten gelen travmalarınızın tespiti",
+      "Kişiye özel travmalardan arınma seansı"
     ],
     benefits: ["İçsel huzur", "Karar verme netliği", "Duygusal yüklerden kurtulma"],
     sessionDuration: "60 Dakika",
@@ -150,9 +150,11 @@ export const HEALER_MANIFESTO = {
   ],
   acceptanceConditions: [
     "Ön görüşme yapmadan, karşılıklı enerjimizi hissetmeden hiçbir seansa başlamıyorum.",
+    "İlk ön görüşme hem yüz yüze hem de online olarak tamamen ÜCRETSİZDİR.",
+    "Ön görüşmeler WhatsApp üzerinden yapılmaktadır ve gerçek kişi bilgileriniz gerekmektedir.",
+    "Seanslarımız tamamen TEMASSIZ olarak yapılmaktadır.",
     "Sadece şifalanmaya, sorumluluk almaya ve kendi içsel dönüşümüne hazır danışanlarla çalışıyorum.",
-    "Sayılar, şifreler veya hazır kalıplar değil; her bireyin kendi ruhsal ihtiyacına göre tamamen kişiye özel çalışma yürütüyorum.",
-    "İlk ön görüşme hem yüz yüze hem de online olarak tamamen ÜCRETSİZDİR."
+    "Sayılar, şifreler veya hazır kalıplar değil; her bireyin kendi ruhsal ihtiyacına göre tamamen kişiye özel çalışma yürütüyorum."
   ]
 };
 
@@ -339,7 +341,15 @@ export const VIDEO_SHOWCASE = {
 export const FAQ_ITEMS = [
   {
     question: "İlk ön görüşme neden ücretsizdir?",
-    answer: "Çünkü her uygulayıcı her danışanla frekans uyumu yakalayamayabilir. Biz öncelikle sizin ihtiyacınızı, enerjinizi dinler; birlikte yol alıp alamayacağımıza karşılıklı karar veririz. Bu süreç tamamen samimi ve ücretsizdir."
+    answer: "Çünkü her uygulayıcı her danışanla frekans uyumu yakalayamayabilir. İlk ön görüşme hem yüz yüze hem de online olarak tamamen ÜCRETSİZDİR. Whatsapp üzerinden yapılmaktadır ve gerçek kişi bilgileriniz gerekmektedir. İhtiyacınızı, enerjinizi dinler; birlikte yol alıp alamayacağımıza karşılıklı karar veririz."
+  },
+  {
+    question: "Seanslarınız nasıl yapılmaktadır, temas var mıdır?",
+    answer: "Seanslarımız TEMASSIZ olarak yapılmaktadır. Enerji akışı ve çakra dengelemesi fiziksel temas olmaksızın, manyetik aura alanı üzerinden ve holistik tekniklerle güvenle gerçekleştirilir."
+  },
+  {
+    question: "Kaç seans almam gerekiyor?",
+    answer: "Kişinin yaşadığı blokajın derinliğine, döngünün geçmişine ve enerjisel alıcılığına göre değişir. Çoğu danışanımızda ilk seansta bile belirgin ferahlama ve dönüşüm gözlemlenmektedir. Ancak Enerjiyi algıladığında beynimiz “dışarıdan gelen bir bilinmez var ben korunmalıyım” algısını oluşturur. İkinci seans bu oluşumu yumuşatarak enerjinin tam alınmasını sağlar. Üçüncü seans ise enerjinin artık danışanımızda oturmasını sağlar. Yani seanslarımız en az 3 seans olarak alınır. Ağır vakalarda ise bu süre Danışan ile görüşerek uzatılabilir."
   },
   {
     question: "Bioenerji seansları tıp tedavisinin yerine geçer mi?",
@@ -348,10 +358,6 @@ export const FAQ_ITEMS = [
   {
     question: "Online seanslar da yüz yüze seanslar kadar etkili midir?",
     answer: "Kuantum fiziği ve kadim enerji öğretilerine göre bilinç ve kuantum alanında zaman ve mekan kısıtlaması yoktur. Doğru odaklanma ve rezonans ile online seanslar da birebir seanslar kadar güçlü etki sağlar."
-  },
-  {
-    question: "Kaç seans almam gerekir?",
-    answer: "Kişinin yaşadığı blokajın derinliğine, döngünün geçmişine ve enerjisel alıcılığına göre değişir. Çoğu danışanımızda 1 ile 3 seans arasında belirgin ferahlama ve dönüşüm gözlemlenmektedir."
   }
 ];
 

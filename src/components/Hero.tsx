@@ -42,16 +42,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onOpenAppointment }) => 
             </p>
 
             {/* Value Props Grid - Light & Translucent */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 max-w-2xl">
-              <div className="flex items-center gap-2 text-xs text-slate-200 bg-slate-800/40 border border-slate-700/50 px-3.5 py-2.5 rounded-xl backdrop-blur-md">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 max-w-3xl">
+              <div className="flex items-center gap-2 text-xs text-slate-200 bg-slate-800/40 border border-slate-700/50 px-3 py-2.5 rounded-xl backdrop-blur-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>1. Ön Görüşme <strong>Ücretsiz</strong></span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-200 bg-slate-800/40 border border-slate-700/50 px-3.5 py-2.5 rounded-xl backdrop-blur-md">
-                <HeartPulse className="w-4 h-4 text-purple-300 flex-shrink-0" />
-                <span>Bireysel Holistik Uyum</span>
+              <div className="flex items-center gap-2 text-xs text-slate-200 bg-slate-800/40 border border-slate-700/50 px-3 py-2.5 rounded-xl backdrop-blur-md">
+                <Sparkles className="w-4 h-4 text-amber-300 flex-shrink-0" />
+                <span>Tamamen <strong>Temassız</strong> Seans</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-200 bg-slate-800/40 border border-slate-700/50 px-3.5 py-2.5 rounded-xl backdrop-blur-md">
+              <div className="flex items-center gap-2 text-xs text-slate-200 bg-slate-800/40 border border-slate-700/50 px-3 py-2.5 rounded-xl backdrop-blur-md">
+                <HeartPulse className="w-4 h-4 text-purple-300 flex-shrink-0" />
+                <span>Kişiye Özel Uyum</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-slate-200 bg-slate-800/40 border border-slate-700/50 px-3 py-2.5 rounded-xl backdrop-blur-md">
                 <Compass className="w-4 h-4 text-sky-400 flex-shrink-0" />
                 <span>Yüz Yüze & Online</span>
               </div>

@@ -28,6 +28,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenAppointm
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
             Her bireyin enerjisel frekansı ve yaşam yolculuğu benzersizdir. Seanslarımız hazır kalıplarla değil; tamamen sizin aurik haritanıza ve blokajlarınıza özel tasarlanır.
           </p>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-950/40 border border-purple-500/30 text-purple-200 text-xs font-medium backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 flex-shrink-0" />
+            <span>Önemli Bilgilendirme: Seanslarımız tamamen <strong>TEMASSIZ</strong> olarak yapılmaktadır.</span>
+          </div>
         </div>
 
         {/* Services 2x2 Grid */}

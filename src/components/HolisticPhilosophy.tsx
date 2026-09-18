@@ -138,7 +138,7 @@ export const HolisticPhilosophy: React.FC = () => {
 
               {/* Mystic quote footer */}
               <div className="mt-6 p-3.5 rounded-xl bg-slate-800/60 border-l-4 border-amber-300 text-xs text-amber-100 italic">
-                "Bazı kapılar taştan yapılır… Ama asıl açılan kapı içeridedir. Eğer bugün yolun buradan geçtiyse, belki de gelmen gerekiyordu."
+                “Bazı kapılar taştan yapılır… Ama asıl kapı içeridedir. Hiçbir şey tesadüf değildir. Eğer yolun bu siteden geçtiyse bize gelmen gerekiyordur.”
               </div>
 
             </div>

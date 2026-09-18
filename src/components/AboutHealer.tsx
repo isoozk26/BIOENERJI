@@ -102,13 +102,16 @@ export const AboutHealer: React.FC<AboutHealerProps> = ({ onOpenAppointment }) =
 
             {/* Free Consultation Highlight Banner */}
             <div className="p-5 rounded-2xl bg-gradient-to-r from-purple-900/40 via-[#161F34] to-amber-950/30 border border-purple-400/40 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="space-y-1 text-center sm:text-left">
+              <div className="space-y-1.5 text-center sm:text-left">
                 <span className="text-xs font-semibold text-amber-300 flex items-center justify-center sm:justify-start gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  ŞEFFAF VE GÜVENLİ İLK ADIM
+                  ŞEFFAF VE GÜVENLİ İLK ADIM • TEMASSIZ SEANSLAR
                 </span>
                 <p className="text-sm font-medium text-white">
-                  İlk ön görüşme yüz yüze veya online olarak yapılır ve <strong>ÜCRETSİZDİR</strong>.
+                  İlk ön görüşme hem yüz yüze hem de online olarak tamamen <strong>ÜCRETSİZDİR</strong>.
+                </p>
+                <p className="text-xs text-slate-300 font-light">
+                  Whatsapp üzerinden yapılmaktadır ve gerçek kişi bilgileriniz gerekmektedir. Seanslarımız <strong>TEMASSIZ</strong> olarak yapılmaktadır.
                 </p>
               </div>
 

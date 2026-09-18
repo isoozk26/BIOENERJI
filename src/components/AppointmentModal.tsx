@@ -27,7 +27,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
 • Tercih Edilen Seans: ${topic}
 • Seans Türü: ${sessionType}
 • Ek Not / Belirti: ${note || 'Belirtilmedi'}
-• Not: Ücretsiz 1. Ön Görüşme talebidir.`;
+• Not: İlk ön görüşme hem yüz yüze hem online tamamen ÜCRETSİZDİR. WhatsApp üzerinden yapılmaktadır ve gerçek kişi bilgileriniz gerekmektedir. Seanslarımız TEMASSIZ olarak yapılmaktadır.`;
 
     const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
@@ -44,15 +44,14 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full border border-slate-700 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors bg-slate-900"
-          aria-label="Kapat"
+          className="absolute top-5 right-5 p-2 rounded-full bg-slate-800/80 text-slate-400 hover:text-white transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {!isSubmitted ? (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="text-left space-y-1 mb-5">
+            <div className="text-left space-y-1.5 mb-5">
               <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 text-amber-400">
                 <Sparkles className="w-3.5 h-3.5" />
                 ÜCRETSİZ İLK ÖN GÖRÜŞME
@@ -60,8 +59,9 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
               <h3 className="text-2xl font-serif font-bold text-white">
                 Seans & Danışmanlık Randevusu
               </h3>
-              <p className="text-xs font-light text-slate-400">
-                Bilgilerinizi girin, Osman Özden ile birebir ön görüşmenizi planlayalım.
+              <p className="text-xs font-light text-slate-300 leading-relaxed">
+                İlk ön görüşme hem yüz yüze hem de online olarak tamamen <strong className="text-white">ÜCRETSİZDİR</strong>.
+                Whatsapp üzerinden yapılmaktadır ve gerçek kişi bilgileriniz gerekmektedir.
               </p>
             </div>
 
@@ -159,10 +159,16 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
               />
             </div>
 
-            {/* Privacy note */}
-            <div className="flex items-center gap-2 text-[11px] text-slate-400 pt-1">
-              <ShieldCheck className="w-4 h-4 flex-shrink-0 text-emerald-400" />
-              <span>Bilgileriniz tamamen gizli tutulur. Asla 3. kişilerle paylaşılmaz.</span>
+            {/* Privacy & Contactless note */}
+            <div className="space-y-1.5 pt-1">
+              <div className="flex items-center gap-2 text-[11px] text-slate-400">
+                <ShieldCheck className="w-4 h-4 flex-shrink-0 text-emerald-400" />
+                <span>Bilgileriniz tamamen gizli tutulur. Asla 3. kişilerle paylaşılmaz.</span>
+              </div>
+              <div className="flex items-center gap-2 text-[11px] text-amber-300 font-medium">
+                <Sparkles className="w-4 h-4 flex-shrink-0 text-amber-400" />
+                <span>Seanslarımız <strong>TEMASSIZ</strong> olarak yapılmaktadır.</span>
+              </div>
             </div>
 
             {/* Submit Button */}
