@@ -9,7 +9,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onOpenAppointment }) => {
   return (
-    <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 flex items-center justify-center overflow-hidden border-b border-purple-500/15">
+    <section className="relative pt-24 pb-10 md:pt-28 md:pb-14 flex items-center justify-center overflow-hidden border-b border-purple-500/15">
       {/* Soft Ambient Radiant Halos */}
       <div className="aura-glow-circle w-[600px] h-[600px] bg-purple-500/15 top-1/4 left-1/4 -translate-x-1/2 pointer-events-none"></div>
       <div className="aura-glow-circle w-[500px] h-[500px] bg-sky-400/12 top-1/3 right-10 pointer-events-none"></div>

@@ -23,14 +23,14 @@ export const HolisticPhilosophy: React.FC = () => {
   const currentPillar = PHILOSOPHY_PILLARS.find((p) => p.id === activeTab) || PHILOSOPHY_PILLARS[0];
 
   return (
-    <section id="felsefe" className="relative py-24 bg-[#0D111D] overflow-hidden">
+    <section id="felsefe" className="relative py-14 sm:py-16 bg-[#0D111D] overflow-hidden">
       {/* Background soft glow */}
       <div className="aura-glow-circle w-[500px] h-[500px] bg-purple-500/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-900/30 border border-purple-400/30 text-purple-200 text-xs font-semibold backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-purple-300" />
             <span>KADİM ÖĞRETİ & BÜTÜNCÜL YAKLAŞIM</span>

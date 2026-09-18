@@ -8,7 +8,7 @@ interface AboutHealerProps {
 
 export const AboutHealer: React.FC<AboutHealerProps> = ({ onOpenAppointment }) => {
   return (
-    <section id="hakkimda" className="relative py-24 bg-[#0D111D] overflow-hidden">
+    <section id="hakkimda" className="relative py-14 sm:py-16 bg-[#0D111D] overflow-hidden">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

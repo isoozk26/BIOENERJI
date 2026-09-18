@@ -10,11 +10,11 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="sss" className="relative py-24 bg-[#07080D]">
+    <section id="sss" className="relative py-14 sm:py-16 bg-[#0D111D]">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center space-y-4 mb-14">
+        <div className="text-center space-y-3 mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold border bg-slate-900 border-slate-700 text-slate-300">
             <HelpCircle className="w-3.5 h-3.5 text-purple-400" />
             <span>SIKÇA SORULAN SORULAR</span>

@@ -22,11 +22,11 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
   };
 
   return (
-    <section id="sorunlar" className="relative py-24 bg-[#101524] border-y border-purple-500/15">
+    <section id="sorunlar" className="relative py-14 sm:py-16 bg-[#101524] border-y border-purple-500/15">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-950/30 border border-red-400/30 text-red-300 text-xs font-semibold backdrop-blur-md">
             <AlertCircle className="w-3.5 h-3.5 text-red-400" />
             <span>FARKINDALIK VE TEŞHİS</span>
@@ -45,11 +45,11 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
         </div>
 
         {/* 3 Core Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {THREE_CORE_ISSUES.map((issue) => (
             <div
               key={issue.id}
-              className="group relative rounded-3xl glass-panel p-8 flex flex-col justify-between border border-purple-500/20 hover:border-purple-400/40 hover:bg-[#182138]/80 transition-all duration-300 shadow-lg"
+              className="group relative rounded-3xl glass-panel p-6 sm:p-7 flex flex-col justify-between border border-purple-500/20 hover:border-purple-400/40 hover:bg-[#182138]/80 transition-all duration-300 shadow-lg"
             >
               {/* Number Badge */}
               <div className="absolute top-6 right-6 text-4xl font-serif font-black text-slate-700 group-hover:text-purple-400/40 transition-colors">
@@ -58,7 +58,7 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
 
               <div>
                 {/* Icon Container */}
-                <div className="w-14 h-14 rounded-2xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="w-13 h-13 rounded-2xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform duration-300 p-3">
                   {getIcon(issue.icon)}
                 </div>
 
@@ -68,17 +68,17 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
                 </span>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white font-serif mb-3 group-hover:text-purple-200 transition-colors">
+                <h3 className="text-xl font-bold text-white font-serif mb-2.5 group-hover:text-purple-200 transition-colors">
                   {issue.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-slate-200 leading-relaxed mb-6 font-light">
+                <p className="text-sm text-slate-200 leading-relaxed mb-5 font-light">
                   {issue.description}
                 </p>
 
                 {/* Quote Box */}
-                <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-700/50 mb-6 text-xs text-slate-300 italic">
+                <div className="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-700/50 mb-5 text-xs text-slate-300 italic">
                   "{issue.quote}"
                 </div>
               </div>
@@ -86,7 +86,7 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
               {/* Action Button */}
               <button
                 onClick={() => onOpenAppointment(issue.title)}
-                className="w-full py-3.5 px-4 rounded-2xl bg-purple-900/30 hover:bg-purple-900/50 border border-purple-400/30 hover:border-purple-400 text-purple-200 font-medium text-xs flex items-center justify-center gap-2 transition-all duration-200 group/btn"
+                className="w-full py-3 px-4 rounded-2xl bg-purple-900/30 hover:bg-purple-900/50 border border-purple-400/30 hover:border-purple-400 text-purple-200 font-medium text-xs flex items-center justify-center gap-2 transition-all duration-200 group/btn"
               >
                 <span>{issue.actionText}</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -96,9 +96,9 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
         </div>
 
         {/* Interactive Banner bottom */}
-        <div className="mt-14 p-7 rounded-3xl bg-gradient-to-r from-purple-900/40 via-[#182138] to-sky-950/40 border border-purple-400/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-xl">
+        <div className="mt-10 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-purple-900/40 via-[#182138] to-sky-950/40 border border-purple-400/30 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left shadow-xl">
           <div className="space-y-1">
-            <h4 className="text-lg font-bold text-white font-serif flex items-center justify-center sm:justify-start gap-2">
+            <h4 className="text-base sm:text-lg font-bold text-white font-serif flex items-center justify-center sm:justify-start gap-2">
               <Sparkles className="w-5 h-5 text-amber-300" />
               Sizde bu belirtilerden hangisi var?
             </h4>
@@ -108,7 +108,7 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
           </div>
           <button
             onClick={onOpenQuiz}
-            className="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 to-cyan-400 hover:from-sky-300 hover:to-cyan-300 text-slate-950 font-bold text-xs shadow-lg shadow-cyan-500/20 whitespace-nowrap hover:scale-105 active:scale-95 transition-all"
+            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-sky-400 to-cyan-400 hover:from-sky-300 hover:to-cyan-300 text-slate-950 font-bold text-xs shadow-lg shadow-cyan-500/20 whitespace-nowrap hover:scale-105 active:scale-95 transition-all"
           >
             Hızlı Testi Başlat (Ücretsiz)
           </button>

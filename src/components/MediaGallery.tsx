@@ -21,11 +21,11 @@ export const MediaGallery: React.FC = () => {
     : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="galeri" className="relative py-24 bg-[#101524] border-y border-purple-500/15">
+    <section id="galeri" className="relative py-14 sm:py-16 bg-[#101524] border-y border-purple-500/15">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-900/30 border border-purple-400/30 text-purple-200 text-xs font-semibold backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-purple-300" />
             <span>ÖZGÜN FOTOĞRAF VE MEDYA ARŞİVİ</span>
@@ -43,7 +43,7 @@ export const MediaGallery: React.FC = () => {
           </p>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-3">
             {categories.map((cat) => (
               <button
                 key={cat.id}
@@ -61,7 +61,7 @@ export const MediaGallery: React.FC = () => {
         </div>
 
         {/* Video Feature Card */}
-        <div className="mb-14 p-6 sm:p-8 rounded-3xl glass-panel border border-purple-400/30 bg-gradient-to-r from-[#182138]/90 via-[#141B2E] to-[#1A233C] shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mb-8 sm:mb-10 p-5 sm:p-7 rounded-3xl glass-panel border border-purple-400/30 bg-gradient-to-r from-[#182138]/90 via-[#141B2E] to-[#1A233C] shadow-2xl flex flex-col md:flex-row items-center justify-between gap-5">
           <div className="space-y-2 text-center md:text-left">
             <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-400/30">
               ✦ ÖZEL VİDEO KAYDI

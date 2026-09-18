@@ -13,10 +13,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment, onOpenQuiz })
   };
 
   return (
-    <footer className="relative bg-[#090C16] text-slate-400 pt-16 pb-24 md:pb-16 border-t border-purple-500/15">
+    <footer className="relative bg-[#090C16] text-slate-400 pt-12 pb-20 md:pb-12 border-t border-purple-500/15">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-slate-800">
           
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-4">
