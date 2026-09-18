@@ -59,13 +59,13 @@ export const HolisticPhilosophy: React.FC = () => {
                 <button
                   key={pillar.id}
                   onClick={() => setActiveTab(pillar.id)}
-                  className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex items-start gap-4 ${
+                  className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 flex items-start gap-4 ${
                     isSelected
-                      ? 'bg-purple-900/30 border-purple-400/60 shadow-lg shadow-purple-950/30 translate-x-2'
-                      : 'bg-[#151C2E]/60 border-slate-700/50 text-slate-300 hover:bg-[#1B243B] hover:border-purple-400/30'
+                      ? 'bg-purple-900/35 border-purple-400/80 shadow-xl shadow-purple-950/40 ring-1 ring-purple-400/40 border-l-4 border-l-purple-400'
+                      : 'bg-[#151C2E]/60 border-slate-700/50 text-slate-300 hover:bg-[#1B243B] hover:border-purple-400/40'
                   }`}
                 >
-                  <div className={`p-3 rounded-xl border ${isSelected ? 'bg-purple-800/40 border-purple-300' : 'bg-slate-800 border-slate-700'}`}>
+                  <div className={`p-3 rounded-xl border flex-shrink-0 ${isSelected ? 'bg-purple-800/40 border-purple-300' : 'bg-slate-800 border-slate-700'}`}>
                     {getPillarIcon(pillar.id)}
                   </div>
                   <div>
@@ -100,12 +100,12 @@ export const HolisticPhilosophy: React.FC = () => {
 
                 {/* Text Description */}
                 <div className="md:col-span-8 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-purple-500/20 border border-purple-300 text-purple-200">
+                  <div className="flex items-start gap-3.5">
+                    <div className="p-2.5 rounded-xl bg-purple-500/20 border border-purple-300 text-purple-200 mt-0.5 flex-shrink-0">
                       {getPillarIcon(currentPillar.id)}
                     </div>
                     <div>
-                      <span className="text-xs font-semibold text-amber-300 uppercase tracking-widest block">
+                      <span className="text-xs font-semibold text-amber-300 uppercase tracking-widest block mb-1">
                         {currentPillar.subtitle}
                       </span>
                       <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
