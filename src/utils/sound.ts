@@ -1,4 +1,4 @@
-// Web Audio API ile Saf 432 Hz / 436 Hz Meditatif Rezonans Üreteci
+// Web Audio API ile Saf 432 Hz / 436 Hz Meditatif Rezonans Üreteci (Mobil ve Masaüstü Uyumlu)
 class MeditativeSoundPlayer {
   private ctx: AudioContext | null = null;
   private osc1: OscillatorNode | null = null;
@@ -21,6 +21,26 @@ class MeditativeSoundPlayer {
     this.listeners.forEach((listener) => listener(this.isPlaying));
   }
 
+  private ensureContext(): AudioContext {
+    const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    if (!this.ctx || this.ctx.state === 'closed') {
+      this.ctx = new AudioCtx();
+    }
+    return this.ctx;
+  }
+
+  private unlockIOS(ctx: AudioContext): void {
+    try {
+      const buffer = ctx.createBuffer(1, 1, 22050);
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      source.connect(ctx.destination);
+      source.start(0);
+    } catch {
+      // ignore
+    }
+  }
+
   public toggle(): boolean {
     if (this.autoStopTimer) {
       clearTimeout(this.autoStopTimer);
@@ -38,43 +58,41 @@ class MeditativeSoundPlayer {
 
   public play(autoStopSeconds?: number): void {
     try {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (!this.ctx) {
-        this.ctx = new AudioCtx();
-      }
+      const ctx = this.ensureContext();
 
-      if (this.ctx.state === 'suspended') {
-        this.ctx.resume();
+      if (ctx.state === 'suspended') {
+        ctx.resume();
       }
+      this.unlockIOS(ctx);
 
-      // If already playing, stop previous oscillators safely
+      // Önceki osilatörleri güvenle temizle
       this.cleanupOscillators();
 
       // Master Gain
-      this.gainNode = this.ctx.createGain();
-      this.gainNode.gain.setValueAtTime(0.001, this.ctx.currentTime);
-      // Yumuşak fade in (1.5 saniye)
-      this.gainNode.gain.exponentialRampToValueAtTime(0.07, this.ctx.currentTime + 1.5);
-      this.gainNode.connect(this.ctx.destination);
+      this.gainNode = ctx.createGain();
+      this.gainNode.gain.setValueAtTime(0.0001, ctx.currentTime);
+      // Yumuşak fade-in (1.5 saniye)
+      this.gainNode.gain.exponentialRampToValueAtTime(0.06, ctx.currentTime + 1.5);
+      this.gainNode.connect(ctx.destination);
 
       // 432 Hz Ana Frekans (Doğal Evren Rezonansı)
-      this.osc1 = this.ctx.createOscillator();
+      this.osc1 = ctx.createOscillator();
       this.osc1.type = 'sine';
-      this.osc1.frequency.setValueAtTime(432, this.ctx.currentTime);
+      this.osc1.frequency.setValueAtTime(432, ctx.currentTime);
       this.osc1.connect(this.gainNode);
       this.osc1.start();
 
       // 436 Hz Çiftleyici (Binaural 4Hz Derin Teta Dalgası Hissi)
-      this.osc2 = this.ctx.createOscillator();
+      this.osc2 = ctx.createOscillator();
       this.osc2.type = 'sine';
-      this.osc2.frequency.setValueAtTime(436, this.ctx.currentTime);
+      this.osc2.frequency.setValueAtTime(436, ctx.currentTime);
       this.osc2.connect(this.gainNode);
       this.osc2.start();
 
       this.isPlaying = true;
       this.notify();
 
-      // Opsiyonel otomatik kapanma süresi (Örn: açılışta 10 saniye)
+      // 10 saniye sonra otomatik yumuşak kapanma
       if (this.autoStopTimer) {
         clearTimeout(this.autoStopTimer);
         this.autoStopTimer = null;
@@ -99,8 +117,8 @@ class MeditativeSoundPlayer {
     }
 
     try {
-      if (this.gainNode && this.ctx) {
-        // Yumuşak fade out (0.8 saniye)
+      if (this.gainNode && this.ctx && this.ctx.state === 'running') {
+        // Yumuşak fade-out (0.8 saniye)
         this.gainNode.gain.setValueAtTime(this.gainNode.gain.value, this.ctx.currentTime);
         this.gainNode.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.8);
         setTimeout(() => {
@@ -136,50 +154,59 @@ class MeditativeSoundPlayer {
   public initAutoPlay(durationSeconds = 10): void {
     if (this.hasAutoPlayed) return;
 
-    const startSession = () => {
+    const triggerPlay = () => {
       if (this.hasAutoPlayed) return;
       this.hasAutoPlayed = true;
       cleanup();
-      this.play(durationSeconds);
+
+      const ctx = this.ensureContext();
+      if (ctx.state === 'suspended') {
+        ctx.resume().then(() => {
+          this.play(durationSeconds);
+        }).catch(() => {
+          this.play(durationSeconds);
+        });
+      } else {
+        this.play(durationSeconds);
+      }
     };
 
     const cleanup = () => {
-      window.removeEventListener('pointerdown', startSession);
-      window.removeEventListener('touchstart', startSession);
-      window.removeEventListener('scroll', startSession);
-      window.removeEventListener('keydown', startSession);
-      window.removeEventListener('click', startSession);
+      document.removeEventListener('touchstart', triggerPlay);
+      document.removeEventListener('touchend', triggerPlay);
+      document.removeEventListener('pointerdown', triggerPlay);
+      document.removeEventListener('click', triggerPlay);
+      document.removeEventListener('scroll', triggerPlay);
+      window.removeEventListener('scroll', triggerPlay);
     };
 
-    // 1. Tarayıcı izin veriyorsa hemen başlat
+    // 1. Masaüstü/Tarayıcı izin veriyorsa hemen başlatmayı dene
     try {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (!this.ctx) {
-        this.ctx = new AudioCtx();
-      }
-      if (this.ctx.state === 'running') {
-        startSession();
+      const ctx = this.ensureContext();
+      if (ctx.state === 'running') {
+        triggerPlay();
         return;
       }
-      if (this.ctx.state === 'suspended') {
-        this.ctx.resume().then(() => {
-          if (this.ctx?.state === 'running') {
-            startSession();
+      if (ctx.state === 'suspended') {
+        ctx.resume().then(() => {
+          if (ctx.state === 'running') {
+            triggerPlay();
           }
         }).catch(() => {
-          // Fallback to interaction
+          // Mobil kısıtlama durumunda dokunma etkileşimi beklenir
         });
       }
     } catch {
-      // Tarayıcı doğrudan başlatmayı kısıtladıysa etkileşim beklenir
+      // Mobil tarayıcı ilk jesti bekler
     }
 
-    // 2. Tarayıcı kısıtlamasına karşı kullanıcının ilk hareketinde (tıklama, dokunma, kaydırma) 10 saniyelik sesi başlat
-    window.addEventListener('pointerdown', startSession, { once: true, passive: true });
-    window.addEventListener('touchstart', startSession, { once: true, passive: true });
-    window.addEventListener('scroll', startSession, { once: true, passive: true });
-    window.addEventListener('keydown', startSession, { once: true, passive: true });
-    window.addEventListener('click', startSession, { once: true, passive: true });
+    // 2. Mobil tarayıcılar (iOS Safari / Android Chrome) için ilk ekrana dokunma anında 10 saniyelik sesi tetikle
+    document.addEventListener('touchstart', triggerPlay, { once: true, passive: true });
+    document.addEventListener('touchend', triggerPlay, { once: true, passive: true });
+    document.addEventListener('pointerdown', triggerPlay, { once: true, passive: true });
+    document.addEventListener('click', triggerPlay, { once: true, passive: true });
+    document.addEventListener('scroll', triggerPlay, { once: true, passive: true });
+    window.addEventListener('scroll', triggerPlay, { once: true, passive: true });
   }
 
   public getStatus(): boolean {

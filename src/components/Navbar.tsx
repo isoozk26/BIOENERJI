@@ -127,12 +127,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
         <div className="flex items-center gap-2 md:hidden">
           <button
             onClick={toggleSound}
-            className={`p-2 rounded-full border text-xs ${
-              isPlayingSound ? 'bg-purple-500/20 border-purple-400 text-purple-300' : 'bg-slate-800 border-slate-700 text-slate-300'
+            className={`p-2 rounded-full border text-xs transition-all duration-300 ${
+              isPlayingSound
+                ? 'bg-purple-500/30 border-purple-400 text-purple-300 animate-pulse shadow-md shadow-purple-500/40'
+                : 'bg-slate-800 border-slate-700 text-slate-300'
             }`}
             aria-label="Frekans Sesi"
           >
-            {isPlayingSound ? <Volume2 className="w-4 h-4 text-purple-300" /> : <VolumeX className="w-4 h-4" />}
+            {isPlayingSound ? <Volume2 className="w-4 h-4 text-purple-300" /> : <VolumeX className="w-4 h-4 text-slate-400" />}
           </button>
 
           <button
