@@ -154,11 +154,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onOpenAppointment }) => 
                 <span>432 Hz Doğal Frekans</span>
               </div>
 
-              {/* Floating Healing Badge Bottom Left */}
-              <div className="absolute -bottom-3 -left-3 px-3.5 py-2 rounded-2xl bg-[#182034]/90 border border-purple-400/40 text-purple-200 text-xs font-semibold shadow-xl backdrop-blur-xl flex items-center gap-2">
-                <HeartPulse className="w-4 h-4 text-purple-300" />
-                <span>Holos Bütüncül Şifa</span>
-              </div>
             </div>
 
           </div>
