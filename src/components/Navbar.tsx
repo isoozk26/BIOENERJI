@@ -18,12 +18,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
       setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // soundManager durumunu dinle (otomatik kapanma ve manuel aç/kapa ile senkronize)
+    const unsubscribe = soundManager.subscribe((playing) => {
+      setIsPlayingSound(playing);
+    });
+
+    // Web sitesi açılınca 10 saniye açık kalsın sonra otomatik kapansın
+    soundManager.initAutoPlay(10);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      unsubscribe();
+    };
   }, []);
 
   const toggleSound = () => {
-    const active = soundManager.toggle();
-    setIsPlayingSound(active);
+    soundManager.toggle();
   };
 
   const navLinks = [
@@ -150,6 +161,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuiz, onOpenAppointment })
             ))}
 
             <div className="flex flex-col gap-3 pt-3">
+              {/* Mobile 432 Hz Sound Toggle */}
+              <button
+                onClick={toggleSound}
+                className={`w-full py-2.5 px-4 rounded-xl border text-sm font-medium flex items-center justify-center gap-2 transition-all ${
+                  isPlayingSound
+                    ? 'bg-purple-500/25 border-purple-400 text-purple-200 shadow-md shadow-purple-500/40 animate-pulse'
+                    : 'bg-slate-800/80 border-slate-700 text-slate-300'
+                }`}
+              >
+                {isPlayingSound ? <Volume2 className="w-4 h-4 text-purple-300" /> : <VolumeX className="w-4 h-4 text-slate-400" />}
+                <span>432 Hz Doğal Frekans ({isPlayingSound ? 'Açık' : 'Kapalı'})</span>
+              </button>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
