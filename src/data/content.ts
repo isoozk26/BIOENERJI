@@ -344,12 +344,12 @@ export const FAQ_ITEMS = [
     answer: "Çünkü her uygulayıcı her danışanla frekans uyumu yakalayamayabilir. İlk ön görüşme hem yüz yüze hem de online olarak tamamen ÜCRETSİZDİR. Whatsapp üzerinden yapılmaktadır ve gerçek kişi bilgileriniz gerekmektedir. İhtiyacınızı, enerjinizi dinler; birlikte yol alıp alamayacağımıza karşılıklı karar veririz."
   },
   {
-    question: "Bioenerji uzmanlığınızı kursa giderek mi öğrendiniz?",
-    answer: "Ben bu ilmi atalarımdan gelen ve kadim gelenekte 'el alma' denilen yöntem ile, her şeyden önce Cenab-ı Allah'ın izni ve inayetiyle edindim. Elbette mesleki gereklilikleri yerine getirmek adına kurslara da katılıp resmi sertifikalarımı aldım; ancak uzun yıllardır icra ettiğim bu alanda hem gerekli kadim 'El'e hem de danışanlarıma rehberlik edecek derin tecrübeye sahibim."
+    question: "Bioenerji Uzmanlığınızı kursa giderek mi öğrendiniz?",
+    answer: "Ben Atalarımdan gelen ve el alma denilen yöntem ile ve tabi önce Cenab-ı Allah'ın izni ile edindim. Kurslara da gidip sertifikalar aldım ama uzun zamandır yaptığım bu iş için hem gerekli El'e hem de gerekli Tecrübeye sahibim."
   },
   {
     question: "Seansları tamamladığımda neler kazanabilirim ve hayatımda neler değişir?",
-    answer: "Tamamlanan seanslar; bedeninizde ağırlık oluşturan pek çok enerjisel ağrının hafiflemesine ve geçmişten taşınan duygusal travmaların şifalanmasına vesile olabilir. Zihinsel dinginlikle birlikte odaklanma ve günlük verimliliğiniz artar, üzerinizdeki durağan enerji kalktığı için işlerinizin ve kısmetinizin önündeki görünmez engeller açılabilir. Kişisel ve sosyal ilişkilerinizde çok daha dengeli, huzurlu ve arzu ettiğiniz sonuçları almanıza zemin hazırlar."
+    answer: "Aldığınız seanslar sizdeki bir çok ağrılarınızın yok olmasını sağlayabilir, travmalarınızın yok olmasını sağlayabilir, verimliliğinizin ve odaklanmanızın artmasına neden olabilir, işlerinizin açılmasını sağlayabilir, kişisel ilişkilerinizde istediğiniz sonuçları almanızı sağlayabilir."
   },
   {
     question: "Seanslarınız nasıl yapılmaktadır, temas var mıdır?",
