@@ -410,7 +410,7 @@ func main() {
 
 	adminPass = os.Getenv("ADMIN_PASSWORD")
 	if adminPass == "" {
-		adminPass = "osman2026"
+		adminPass = "Bioenerji_2026"
 	}
 
 	if err := initDB(dbPath); err != nil {
