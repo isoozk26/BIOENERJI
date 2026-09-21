@@ -16,15 +16,32 @@ import { AppointmentModal } from './components/AppointmentModal';
 import { AdminDashboard } from './components/AdminDashboard';
 
 export const App: React.FC = () => {
-  const [isAdminRoute, setIsAdminRoute] = useState(false);
+  const checkIsAdmin = () => {
+    if (typeof window === 'undefined') return false;
+    const path = window.location.pathname.toLowerCase();
+    const hash = window.location.hash.toLowerCase();
+    const search = window.location.search.toLowerCase();
+    return (
+      path === '/admin' || 
+      path.startsWith('/admin/') || 
+      hash.includes('admin') || 
+      search.includes('admin')
+    );
+  };
+
+  const [isAdminRoute, setIsAdminRoute] = useState(checkIsAdmin);
 
   useEffect(() => {
-    const checkRoute = () => {
-      setIsAdminRoute(window.location.pathname.startsWith('/admin'));
+    const handleRoute = () => {
+      setIsAdminRoute(checkIsAdmin());
     };
-    checkRoute();
-    window.addEventListener('popstate', checkRoute);
-    return () => window.removeEventListener('popstate', checkRoute);
+    handleRoute();
+    window.addEventListener('popstate', handleRoute);
+    window.addEventListener('hashchange', handleRoute);
+    return () => {
+      window.removeEventListener('popstate', handleRoute);
+      window.removeEventListener('hashchange', handleRoute);
+    };
   }, []);
 
   const [isQuizOpen, setIsQuizOpen] = useState(false);
