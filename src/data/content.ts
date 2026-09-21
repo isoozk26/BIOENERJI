@@ -108,9 +108,9 @@ export const SERVICES: ServiceItem[] = [
       "Kişiye özel travmalardan arınma seansı"
     ],
     benefits: ["İçsel huzur", "Karar verme netliği", "Duygusal yüklerden kurtulma"],
-    sessionDuration: "30 - 45 Dakika",
+    sessionDuration: "60 Dakika",
     glowColor: "from-amber-500/20 to-purple-500/20",
-    image: "/assets/foto_x/foto_5.jpg"
+    image: "/assets/foto_x/osman_holistik_seans.jpg"
   },
   {
     id: "bag-kesme-arindirma",
