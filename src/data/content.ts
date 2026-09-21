@@ -93,7 +93,7 @@ export const SERVICES: ServiceItem[] = [
       "Bölgesel enerji sıkışmalarının serbest bırakılması"
     ],
     benefits: ["Derin rahatlama", "Canlılık ve zindelik", "Konsantrasyon artışı"],
-    sessionDuration: "45 - 60 Dakika",
+    sessionDuration: "30 - 45 Dakika",
     glowColor: "from-purple-500/20 to-indigo-500/20",
     image: "/assets/foto_x/foto_4.jpg"
   },
@@ -108,7 +108,7 @@ export const SERVICES: ServiceItem[] = [
       "Kişiye özel travmalardan arınma seansı"
     ],
     benefits: ["İçsel huzur", "Karar verme netliği", "Duygusal yüklerden kurtulma"],
-    sessionDuration: "60 Dakika",
+    sessionDuration: "30 - 45 Dakika",
     glowColor: "from-amber-500/20 to-purple-500/20",
     image: "/assets/foto_x/foto_5.jpg"
   },
@@ -123,7 +123,7 @@ export const SERVICES: ServiceItem[] = [
       "Bağımlılık hissi veren enerjisel bağların temizlenmesi"
     ],
     benefits: ["Özgürleşme hissi", "Kendi enerjisine sahip çıkma", "Geleceğe güvenle bakma"],
-    sessionDuration: "50 Dakika",
+    sessionDuration: "30 - 45 Dakika",
     glowColor: "from-cyan-500/20 to-blue-500/20",
     image: "/assets/foto_x/foto_6.jpg"
   },
@@ -138,7 +138,7 @@ export const SERVICES: ServiceItem[] = [
       "Antika ve taşınmış eşyaların enerji temizliği"
     ],
     benefits: ["Evde huzur", "Verimli uyku ve çalışma ortamı", "Ferah atmosfer"],
-    sessionDuration: "Ön İncelemeye Göre",
+    sessionDuration: "30 - 45 Dakika",
     glowColor: "from-emerald-500/20 to-teal-500/20",
     image: "/assets/foto_x/foto_10.jpg"
   }
