@@ -20,7 +20,7 @@ export const THREE_CORE_ISSUES: IssueItem[] = [
     subtitle: "Çevresel Duygu ve Yük Transferi",
     description: "Bazı insanların veya ortamların yanında aniden enerjinizin düştüğünü, sebepsiz bir ağırlık ve hüzün çöktüğünü hissediyorsanız; bu bir tesadüf değil, çevrenin negatif duygusal yükünü üzerinize çekmenizdir.",
     icon: "ShieldAlert",
-    image: "/assets/topics/topic_1_aura_shield.jpg",
+    image: "/assets/topics/topic_1_aura_nebula_v2.jpg",
     actionText: "Aura Kalkanını Güçlendir",
     quote: "Kimse bunu açık açık söylemiyor ama enerji düşüklüğünün en büyük sebebi sana ait olmayan duygulardır."
   },
@@ -40,7 +40,7 @@ export const THREE_CORE_ISSUES: IssueItem[] = [
     subtitle: "Sebepsiz Ağırlaşma ve Dinlenememe",
     description: "10 saat uyusanız bile yorgun uyanıyor, karar vermekte zorlanıyor ve sebepsiz kaygı hissediyorsanız; çakra merkezlerindeki ve meridyenlerdeki yaşam enerjisi (Chi / Ki / Prana) akışı tıkanmış demektir.",
     icon: "BatteryLow",
-    image: "/assets/topics/topic_3_fatigue_renewal.jpg",
+    image: "/assets/topics/topic_3_vital_aurora_v2.jpg",
     actionText: "Doğal Enerji Akışını Yenile",
     quote: "Çoğu insan bu ağırlığı 'normal' sanıyor. Değil! Doğal frekansınıza dönmek mümkün."
   }
