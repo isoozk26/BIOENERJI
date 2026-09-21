@@ -20,7 +20,7 @@ export const THREE_CORE_ISSUES: IssueItem[] = [
     subtitle: "Çevresel Duygu ve Yük Transferi",
     description: "Bazı insanların veya ortamların yanında aniden enerjinizin düştüğünü, sebepsiz bir ağırlık ve hüzün çöktüğünü hissediyorsanız; bu bir tesadüf değil, çevrenin negatif duygusal yükünü üzerinize çekmenizdir.",
     icon: "ShieldAlert",
-    image: "/assets/topics/topic_1_aura_nebula_v2.jpg",
+    image: "/assets/foto_x/foto_8.jpg",
     actionText: "Aura Kalkanını Güçlendir",
     quote: "Kimse bunu açık açık söylemiyor ama enerji düşüklüğünün en büyük sebebi sana ait olmayan duygulardır."
   },
@@ -30,7 +30,7 @@ export const THREE_CORE_ISSUES: IssueItem[] = [
     subtitle: "Görünmez Enerji Kordonları",
     description: "Unuttuğunuzu sandığınız kişiler, eski kırgınlıklar veya çözülmemiş bağlar enerji alanınızda hâlâ yer kaplıyor olabilir. Bu durum yeni kısmetlerin, huzurun ve canlılığın önünde görünmez bir set oluşturur.",
     icon: "Link2Off",
-    image: "/assets/topics/topic_2_energy_cords.jpg",
+    image: "/assets/foto_x/foto_9.jpg",
     actionText: "Bağları Arındır & Serbest Bırak",
     quote: "Hayatında sürekli aynı şeyleri yaşıyorsan bu tesadüf değil, enerji alanındaki tekrar eden bir döngüdür."
   },
@@ -40,7 +40,7 @@ export const THREE_CORE_ISSUES: IssueItem[] = [
     subtitle: "Sebepsiz Ağırlaşma ve Dinlenememe",
     description: "10 saat uyusanız bile yorgun uyanıyor, karar vermekte zorlanıyor ve sebepsiz kaygı hissediyorsanız; çakra merkezlerindeki ve meridyenlerdeki yaşam enerjisi (Chi / Ki / Prana) akışı tıkanmış demektir.",
     icon: "BatteryLow",
-    image: "/assets/topics/topic_3_human_fatigue_v3.jpg",
+    image: "/assets/foto_x/foto_10.jpg",
     actionText: "Doğal Enerji Akışını Yenile",
     quote: "Çoğu insan bu ağırlığı 'normal' sanıyor. Değil! Doğal frekansınıza dönmek mümkün."
   }
