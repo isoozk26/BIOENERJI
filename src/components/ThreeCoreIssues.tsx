@@ -11,13 +11,13 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'ShieldAlert':
-        return <ShieldAlert className="w-7 h-7 text-purple-300" />;
+        return <ShieldAlert className="w-3.5 h-3.5 text-purple-300" />;
       case 'Link2Off':
-        return <Link2Off className="w-7 h-7 text-sky-400" />;
+        return <Link2Off className="w-3.5 h-3.5 text-sky-400" />;
       case 'BatteryLow':
-        return <BatteryLow className="w-7 h-7 text-amber-300" />;
+        return <BatteryLow className="w-3.5 h-3.5 text-amber-300" />;
       default:
-        return <AlertCircle className="w-7 h-7 text-purple-300" />;
+        return <AlertCircle className="w-3.5 h-3.5 text-purple-300" />;
     }
   };
 
@@ -49,31 +49,41 @@ export const ThreeCoreIssues: React.FC<ThreeCoreIssuesProps> = ({ onOpenAppointm
           {THREE_CORE_ISSUES.map((issue) => (
             <div
               key={issue.id}
-              className="group relative rounded-3xl glass-panel p-6 sm:p-7 flex flex-col justify-between border border-purple-500/20 hover:border-purple-400/40 hover:bg-[#182138]/80 transition-all duration-300 shadow-lg"
+              className="group relative rounded-3xl glass-panel p-5 sm:p-6 flex flex-col justify-between border border-purple-500/20 hover:border-purple-400/40 hover:bg-[#182138]/80 transition-all duration-300 shadow-lg"
             >
-              {/* Number Badge */}
-              <div className="absolute top-6 right-6 text-4xl font-serif font-black text-slate-700 group-hover:text-purple-400/40 transition-colors">
-                0{issue.id}
-              </div>
-
               <div>
-                {/* Icon Container */}
-                <div className="w-13 h-13 rounded-2xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform duration-300 p-3">
-                  {getIcon(issue.icon)}
+                {/* Visual Thumbnail Photo Header */}
+                <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden mb-5 border border-purple-400/30 shadow-md bg-slate-900 group-hover:border-purple-400/60 transition-all">
+                  {issue.image && (
+                    <img
+                      src={issue.image}
+                      alt={issue.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-95 group-hover:brightness-105"
+                      loading="lazy"
+                    />
+                  )}
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#101524] via-transparent to-transparent opacity-80" />
+                  
+                  {/* Category Pill Tag on Image */}
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-purple-400/40 text-[10px] uppercase tracking-wider font-semibold text-purple-200 flex items-center gap-1.5 shadow-sm">
+                    {getIcon(issue.icon)}
+                    <span>{issue.subtitle}</span>
+                  </div>
+
+                  {/* Number Badge inside image */}
+                  <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 flex items-center justify-center font-serif font-bold text-xs text-amber-300 shadow-sm">
+                    0{issue.id}
+                  </div>
                 </div>
 
-                {/* Subtitle */}
-                <span className="text-xs uppercase tracking-wider font-semibold text-purple-300 block mb-1">
-                  {issue.subtitle}
-                </span>
-
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white font-serif mb-2.5 group-hover:text-purple-200 transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-white font-serif mb-2 group-hover:text-purple-200 transition-colors">
                   {issue.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-slate-200 leading-relaxed mb-5 font-light">
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4 font-light">
                   {issue.description}
                 </p>
 

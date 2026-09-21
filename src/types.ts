@@ -4,6 +4,7 @@ export interface IssueItem {
   subtitle: string;
   description: string;
   icon: string;
+  image?: string;
   actionText: string;
   quote: string;
 }
