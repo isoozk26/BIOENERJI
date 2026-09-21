@@ -1,26 +1,47 @@
-# 1. Aşama: Build Aşaması (Node 20 Alpine)
-FROM node:20-alpine AS builder
+# 1. Aşama: React ve Tailwind CSS Derleme (Node.js 20)
+FROM node:20-alpine AS frontend-builder
 
 WORKDIR /app
-
-# Paket tanımlarını kopyala ve sessiz/hızlı yükle
 COPY package*.json ./
 RUN npm install --no-audit --no-fund
 
-# Kaynak kodları kopyala ve derle
 COPY . .
 RUN npm run build
 
-# 2. Aşama: Nginx ile Web Sunumu
-FROM nginx:alpine
+# 2. Aşama: Go Binary Derleme (Golang Alpine)
+FROM golang:1.24-alpine AS backend-builder
 
-# Nginx ayar dosyasını ekle
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
 
-# Derleme çıktısını web dizinine aktar
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY main.go ./
+# Frontend build çıktısını Go'nun embed edebilmesi için kopyala
+COPY --from=frontend-builder /app/dist ./dist
 
-# Hem port 80 hem port 3000'i aç
+# CGO gerektirmeyen, hafif, optimize edilmiş tek binary üret
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o bioenerji .
+
+# 3. Aşama: Ultra Hafif Çalışma Zamanı (Alpine Linux ~15 MB)
+FROM alpine:3.20
+
+WORKDIR /app
+
+# HTTPS sertifikaları ve Türkiye saat dilimi için tzdata
+RUN apk --no-cache add ca-certificates tzdata
+ENV TZ=Europe/Istanbul
+
+# Derlenen tek Go binary'sini kopyala
+COPY --from=backend-builder /app/bioenerji /app/bioenerji
+
+# SQLite veritabanı klasörü
+RUN mkdir -p /app/data
+VOLUME /app/data
+
+# Portlar ve varsayılan ortam değişkenleri
 EXPOSE 80 3000
+ENV PORT=3000
+ENV DB_PATH=/app/data/bioenerji.db
+ENV ADMIN_PASSWORD=osman2026
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/app/bioenerji"]

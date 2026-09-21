@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuraCanvas } from './components/AuraCanvas';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -13,11 +13,28 @@ import { Footer } from './components/Footer';
 import { MobileStickyBar } from './components/MobileStickyBar';
 import { EnergyQuizModal } from './components/EnergyQuizModal';
 import { AppointmentModal } from './components/AppointmentModal';
+import { AdminDashboard } from './components/AdminDashboard';
 
 export const App: React.FC = () => {
+  const [isAdminRoute, setIsAdminRoute] = useState(false);
+
+  useEffect(() => {
+    const checkRoute = () => {
+      setIsAdminRoute(window.location.pathname.startsWith('/admin'));
+    };
+    checkRoute();
+    window.addEventListener('popstate', checkRoute);
+    return () => window.removeEventListener('popstate', checkRoute);
+  }, []);
+
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
   const [appointmentTopic, setAppointmentTopic] = useState<string>('Bioenerji & Çakra Dengeleme');
+
+  if (isAdminRoute) {
+    return <AdminDashboard />;
+  }
+
 
   const handleOpenAppointment = (topic?: string) => {
     if (topic) {

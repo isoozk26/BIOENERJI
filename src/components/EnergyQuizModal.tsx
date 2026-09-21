@@ -23,6 +23,46 @@ export const EnergyQuizModal: React.FC<EnergyQuizModalProps> = ({ isOpen, onClos
       setCurrentStep(currentStep + 1);
     } else {
       setIsFinished(true);
+
+      // Asynchronously log quiz result to SQLite backend
+      try {
+        const result = getAnalysisResultForAnswers(updated);
+        fetch('/api/quiz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            answerSummary: `Cevaplar: ${updated.map((ans, qIdx) => `Soru ${qIdx + 1}: ${String.fromCharCode(65 + ans)}`).join(', ')}`,
+            detectedBlockage: result.title
+          })
+        }).catch(err => console.log('Quiz log error:', err));
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
+
+  const getAnalysisResultForAnswers = (answers: number[]) => {
+    const primaryChoice = answers[0] ?? 0;
+    if (primaryChoice === 0) {
+      return {
+        title: "Aura Tıkanıklığı & Yaşam Enerjisi (Prana) Boşalması",
+        badge: "Kök / Sakral Çakra Dengeleme İhtiyacı"
+      };
+    } else if (primaryChoice === 1) {
+      return {
+        title: "Bitmemiş Bağlar & Duygusal Enerji Kordonları",
+        badge: "Kalp Çakrası & Aura Arındırma İhtiyacı"
+      };
+    } else if (primaryChoice === 2) {
+      return {
+        title: "Zihinsel Aşırı Yüklenme & Düşünce Sarmalı",
+        badge: "Üçüncü Göz & Taç Çakra Dengesizliği"
+      };
+    } else {
+      return {
+        title: "İçsel Daralma & Öz Potansiyel Blokajı",
+        badge: "Bütünsel Holistik Dengeleme İhtiyacı"
+      };
     }
   };
 

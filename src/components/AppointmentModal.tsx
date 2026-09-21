@@ -21,6 +21,22 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Asynchronously save lead to SQLite backend
+    try {
+      fetch('/api/appointments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          phone,
+          serviceTitle: `${topic} (${sessionType})`,
+          notes: note || 'Ek not yok'
+        })
+      }).catch(err => console.log('DB save error:', err));
+    } catch (e) {
+      console.log(e);
+    }
+
     const text = `🌟 Yeni Ön Görüşme Talebi (Bio Enerji Web)
 • İsim: ${name}
 • Telefon: ${phone}
