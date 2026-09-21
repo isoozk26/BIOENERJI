@@ -93,9 +93,9 @@ export const SERVICES: ServiceItem[] = [
       "Bölgesel enerji sıkışmalarının serbest bırakılması"
     ],
     benefits: ["Derin rahatlama", "Canlılık ve zindelik", "Konsantrasyon artışı"],
-    sessionDuration: "30 - 45 Dakika",
+    sessionDuration: "45 - 60 Dakika",
     glowColor: "from-purple-500/20 to-indigo-500/20",
-    image: "/assets/foto_x/foto_4.jpg"
+    image: "/assets/foto_x/osman_cakra_seansi.jpg"
   },
   {
     id: "holistik-olumlama",
