@@ -125,7 +125,7 @@ export const SERVICES: ServiceItem[] = [
     benefits: ["Özgürleşme hissi", "Kendi enerjisine sahip çıkma", "Geleceğe güvenle bakma"],
     sessionDuration: "30 - 45 Dakika",
     glowColor: "from-cyan-500/20 to-blue-500/20",
-    image: "/assets/foto_x/foto_6.jpg"
+    image: "/assets/foto_x/sifali_eller_aura_kalkani.jpg"
   },
   {
     id: "mekan-alan-temizligi",
