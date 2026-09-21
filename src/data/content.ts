@@ -138,9 +138,9 @@ export const SERVICES: ServiceItem[] = [
       "Antika ve taşınmış eşyaların enerji temizliği"
     ],
     benefits: ["Evde huzur", "Verimli uyku ve çalışma ortamı", "Ferah atmosfer"],
-    sessionDuration: "30 - 45 Dakika",
+    sessionDuration: "Ön İncelemeye Göre",
     glowColor: "from-emerald-500/20 to-teal-500/20",
-    image: "/assets/foto_x/foto_10.jpg"
+    image: "/assets/foto_x/osman_mekan_seansi.jpg"
   }
 ];
 
