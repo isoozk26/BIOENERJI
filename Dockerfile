@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build
 
 # 2. Aşama: Go Binary Derleme (Golang Alpine)
-FROM golang:1.24-alpine AS backend-builder
+FROM golang:alpine AS backend-builder
 
 WORKDIR /app
 COPY go.mod go.sum ./
@@ -38,10 +38,9 @@ COPY --from=backend-builder /app/bioenerji /app/bioenerji
 RUN mkdir -p /app/data
 VOLUME /app/data
 
-# Portlar ve varsayılan ortam değişkenleri
+# Portlar ve çalışma ortamı
 EXPOSE 80 3000
 ENV PORT=3000
 ENV DB_PATH=/app/data/bioenerji.db
-ENV ADMIN_PASSWORD=osman2026
 
 CMD ["/app/bioenerji"]
