@@ -378,7 +378,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: "Seansları tamamladığımda neler kazanabilirim ve hayatımda neler değişir?",
-    answer: "Aldığınız seanslar sizdeki bir çok ağrılarınızın yok olmasını sağlayabilir, travmalarınızın yok olmasını sağlayabilir, verimliliğinizin ve odaklanmanızın artmasına neden olabilir, işlerinizin açılmasını sağlayabilir, kişisel ilişkilerinizde istediğiniz sonuçları almanızı sağlayabilir."
+    answer: "Aldığınız seanslar sizdeki bir çok ağrılarınızın yok olmasını sağlayabilir, travmalarınızın yok olmasını sağlayabilir. Zihinsel dinginlikle birlikte odaklanma ve günlük verimliliğiniz artar, üzerinizdeki durağan enerji kalktığı için işlerinizin ve kısmetinizin önündeki görünmez engeller tamamen yok olabilir. Bolluk ve bereket sizden yana olabilir. Kişisel ilişkilerinizde istediğiniz sonuçları almanızı sağlayabilir."
   },
   {
     question: "Seanslarınız nasıl yapılmaktadır, temas var mıdır?",
