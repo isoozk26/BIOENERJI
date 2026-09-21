@@ -40,7 +40,7 @@ export const THREE_CORE_ISSUES: IssueItem[] = [
     subtitle: "Sebepsiz Ağırlaşma ve Dinlenememe",
     description: "10 saat uyusanız bile yorgun uyanıyor, karar vermekte zorlanıyor ve sebepsiz kaygı hissediyorsanız; çakra merkezlerindeki ve meridyenlerdeki yaşam enerjisi (Chi / Ki / Prana) akışı tıkanmış demektir.",
     icon: "BatteryLow",
-    image: "/assets/topics/topic_3_vital_aurora_v2.jpg",
+    image: "/assets/topics/topic_3_human_fatigue_v3.jpg",
     actionText: "Doğal Enerji Akışını Yenile",
     quote: "Çoğu insan bu ağırlığı 'normal' sanıyor. Değil! Doğal frekansınıza dönmek mümkün."
   }
