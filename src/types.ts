@@ -40,3 +40,16 @@ export interface QuizQuestion {
     chakraHint?: string;
   }[];
 }
+
+export interface BookItem {
+  id: string;
+  title: string;
+  subtitle?: string;
+  author: string;
+  publisher: string;
+  coverImage: string;
+  description: string;
+  badge?: string;
+  category?: string;
+}
+

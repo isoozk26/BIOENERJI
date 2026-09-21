@@ -1,4 +1,5 @@
-import { IssueItem, ServiceItem, MediaItem, QuizQuestion } from '../types';
+import { IssueItem, ServiceItem, MediaItem, QuizQuestion, BookItem } from '../types';
+
 
 export const SITE_CONFIG = {
   name: "Bio Enerji",
@@ -160,6 +161,31 @@ export const HEALER_MANIFESTO = {
     "Sayılar, şifreler veya hazır kalıplar değil; her bireyin kendi ruhsal ihtiyacına göre tamamen kişiye özel çalışma yürütüyorum."
   ]
 };
+
+export const AUTHOR_BOOKS: BookItem[] = [
+  {
+    id: "kisa-yoldan-hayati-ogrenmek",
+    title: "Kısa Yoldan Hayatı Öğrenmek",
+    subtitle: "Kabul Edilebilir Bencillik",
+    author: "Osman Bahadır Özden",
+    publisher: "Kısayol Yayıncılık",
+    coverImage: "/assets/books/kisa_yoldan_hayati_ogrenmek.jpg",
+    description: "Kişisel farkındalık, sağlıklı sınırlar koyabilme ve bireyin kendi içsel potansiyelini keşfetmesi üzerine rehber niteliğinde bir eser.",
+    badge: "Kişisel Gelişim & Farkındalık",
+    category: "Farkındalık"
+  },
+  {
+    id: "sembollerin-gizli-tarihi",
+    title: "Sembollerin Gizli Tarihi",
+    subtitle: "Kadim İşaretler & Ezoterik Kökenler",
+    author: "Osman Bahadır Özden",
+    publisher: "Galeati Yayıncılık",
+    coverImage: "/assets/books/sembollerin_gizli_tarihi.jpg",
+    description: "İnsanlık tarihi boyunca kullanılan kadim sembollerin, kutsal mühürlerin ve evrensel enerjetik işaretlerin derin ezoterik anlamları.",
+    badge: "Ezoterizm & Kadim Bilgelik",
+    category: "Ezoterizm"
+  }
+];
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
