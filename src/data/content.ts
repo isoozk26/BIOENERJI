@@ -176,7 +176,7 @@ export const AUTHOR_BOOKS: BookItem[] = [
   },
   {
     id: "sembollerin-gizli-tarihi",
-    title: "Sembollerin Gizli Tarihi",
+    title: "Sembollerin Gizemli Tarihi",
     subtitle: "Kadim İşaretler & Ezoterik Kökenler",
     author: "Osman Bahadır Özden",
     publisher: "Galeati Yayıncılık",
